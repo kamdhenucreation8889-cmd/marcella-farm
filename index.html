@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcella Houms</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+        .container { width: 80%; margin: auto; overflow: hidden; background: white; padding: 20px; }
+        
+        .slider-container {
+            width: 100%;
+            height: 450px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: none;
+            background-size: cover;
+            background-position: center;
+            transition: 0.5s ease-in-out;
+        }
+        .active { display: block; }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            text-decoration: none;
+        }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+        .booking-form { margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input, select, button { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        .btn-submit { background: #27ae60; color: white; border: none; cursor: pointer; font-size: 18px; }
+        .btn-submit:hover { background: #219150; }
+        footer { text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Marcella Farm House 🏡</h1>
+    <p>પ્રકૃતિના ખોળે તમારું સ્વાગત છે</p>
+</header>
+
+<div class="container">
+    <div class="slider-container">
+        <div class="slide active" style="background-image: url('photo1.jpg');"></div>
+        <div class="slide" style="background-image: url('photo2.jpg');"></div>
+        <div class="slide" style="background-image: url('photo3.jpg');"></div>
+        <div class="slide" style="background-image: url('photo4.jpg');"></div>
+        <div class="slide" style="background-image: url('photo5.jpg');"></div>
+        <div class="slide" style="background-image: url('photo6.jpg');"></div>
+        <div class="slide" style="background-image: url('photo7.jpg');"></div>
+        <div class="slide" style="background-image: url('photo8.jpg');"></div>
+        <div class="slide" style="background-image: url('photo9.jpg');"></div>
+        <div class="slide" style="background-image: url('photo10.jpg');"></div>
+
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+    
+    <h2>સુવિધાઓ:</h2>
+    <ul>
+        <li>મોટો સ્વિમિંગ પૂલ 🏊</li>
+        <li>AC બેડરૂમ્સ ❄</li>
+        <li>ખુલ્લું ગાર્ડન અને કિચન 🌳</li>
+        <li>ગજેબો</li>
+    </ul>
+
+    <div class="booking-form">
+        <h3>તમારું બુકિંગ કરો</h3>
+        <form id="bookForm">
+            <label>તમારું નામ:</label>
+            <input type="text" id="name" placeholder="તમારું નામ લખો" required>
+
+            <label>તારીખ પસંદ કરો:</label>
+            <input type="date" id="date" required>
+
+            <label>વ્યક્તિઓની સંખ્યા:</label>
+            <input type="number" id="guests" min="1" max="20" placeholder="મહત્તમ 20" required>
+			<label>મોબાઈલ નંબર:</label>
+    <div style="display: flex; gap: 5px; align-items: center;">
+            <span style="background: #ddd; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">+91</span>
+    <input type="tel" id="phone" placeholder="10 આંકડાનો નંબર" required 
+           pattern="[0-9]{10}" maxlength="10" title="કૃપા કરીને ૧૦ આંકડાનો મોબાઈલ નંબર લખો"
+           style="flex: 1; margin: 0;">
+    </div>
+            <button type="submit" class="btn-submit">બુકિંગ કન્ફર્મ કરો</button>
+        </form>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 20px;">
+    <h2>અમારું લોકેશન:</h2>
+   
+    <div style="width: 100%; height: 400px; border-radius: 10px; overflow: hidden; border: 1px solid #ccc;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.4394042852234!2d72.93481237503445!3d21.1349079805435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f465a35316b%3A0x28684f8c12bc050a!2sMarcella%20Homes!5e0!3m2!1sgu!2sin!4v1705060000000!5m2!1sgu!2sin" 
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <div style="margin-top: 10px; text-align: center;">
+        <a href="https://maps.app.goo.gl/9ZpL9tXfXn2uM8Lh9" target="_blank" 
+           style="display: inline-block; background-color: #25d366; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
+            📍 ગૂગલ મેપ પર જુઓ (માર્સેલા હોમ્સ)
+        </a>
+    </div>
+</div>
+    
+    </div>
+</div>
+</div>
+</div>
+
+<footer>
+    <p>સંપર્ક: ‪+91 9081209362‬ | લોકેશન: માર્સેલા હોમ્સ , સુરત , ગુજરાત</p>
+    <p>Design By Kamdhenu</p>
+</footer>
+
+
+<script>
+    // --- ૧. સ્લાઇડશો કંટ્રોલ (ઓટોમેટિક અને મેન્યુઅલ) ---
+    let slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        if (slides.length === 0) return;
+        if (index >= slides.length) { currentSlide = 0; } 
+        else if (index < 0) { currentSlide = slides.length - 1; } 
+        else { currentSlide = index; }
+        
+        slides.forEach(s => s.classList.remove('active'));
+        slides[currentSlide].classList.add('active');
+    }
+
+    function changeSlide(n) { showSlide(currentSlide + n); }
+    
+    // દર ૫ સેકન્ડે ઓટોમેટિક ફોટો બદલાશે
+    setInterval(() => changeSlide(1), 5000);
+
+    // --- ૨. બુકિંગ ફોર્મ, ડુપ્લીકેટ ચેક અને WhatsApp લોજિક ---
+    document.getElementById('bookForm').onsubmit = function(e) {
+        e.preventDefault();
+        
+        // ફોર્મમાંથી ડેટા મેળવવો
+        const name = document.getElementById('name').value;
+        const date = document.getElementById('date').value;
+        const guests = document.getElementById('guests').value;
+        const phone = document.getElementById('phone').value; // ૧૦ આંકડાનો નંબર
+        const submitBtn = document.querySelector('.btn-submit');
+
+        // બટન લોડિંગ મોડમાં
+        submitBtn.innerText = "ચકાસણી થઈ રહી છે...";
+        submitBtn.disabled = true;
+
+        // તમારી Google Apps Script URL (ખાતરી કરો કે આ લેટેસ્ટ છે)
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwpJBSKitFLTnnhFkVXRqYuCGNmtavRxsmjZHkYxCfva_JdpeIKayuCfWaMBN6RwTJPuw/exec'; 
+
+        // પગલું ૧: પહેલા Google Sheet ને પૂછો કે આ તારીખ પહેલેથી બુક છે?
+        fetch(`${scriptURL}?date=${date}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.isBooked) {
+                // જો તારીખ પહેલેથી શીટમાં હોય
+                alert("❌ માફ કરશો! " + date + " તારીખે પહેલેથી બુકિંગ થઈ ગયું છે. મહેરબાની કરીને બીજી તારીખ પસંદ કરો.");
+                submitBtn.innerText = "બુકિંગ કન્ફર્મ કરો";
+                submitBtn.disabled = false;
+            } else {
+                // પગલું ૨: જો તારીખ ખાલી હોય તો ડેટા શીટમાં મોકલો
+                fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors', // CORS એરર રોકવા માટે
+                    cache: 'no-cache',
+                    body: JSON.stringify({ 
+                        "name": name, 
+                        "date": date, 
+                        "guests": guests, 
+                        "phone": phone 
+                    })
+                })
+                .then(() => {
+                    // WhatsApp મેસેજ તૈયાર કરવો
+                    let whatsappMsg = `*નવું ફાર્મ હાઉસ બુકિંગ રિક્વેસ્ટ*%0A--------------------------%0A👤 *નામ:* ${name}%0A📞 *મોબાઈલ:* ${phone}%0A📅 *તારીખ:* ${date}%0A👥 *વ્યક્તિઓ:* ${guests}%0A--------------------------%0Aકૃપા કરીને આ બુકિંગ કન્ફર્મ કરશો.`;
+                    
+                    alert("✅ અભિનંદન " + name + "!\nતમારી બુકિંગ વિગતો સેવ થઈ ગઈ છે.");
+                    
+                    // WhatsApp એપ ખોલવી
+                    window.location.href = `https://wa.me/919081209362?text=${whatsappMsg}`;
+                    
+                    // ફોર્મ ક્લિયર કરવું
+                    document.getElementById('bookForm').reset();
+                })
+                .catch(error => {
+                    alert("ડેટા સેવ કરવામાં ભૂલ આવી છે. ફરી પ્રયાસ કરો.");
+                })
+                .finally(() => {
+                    submitBtn.innerText = "બુકિંગ કન્ફર્મ કરો";
+                    submitBtn.disabled = false;
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error!', error);
+            alert("કનેક્શનમાં સમસ્યા છે. ઇન્ટરનેટ ચેક કરો.");
+            submitBtn.disabled = false;
+            submitBtn.innerText = "બુકિંગ કન્ફર્મ કરો";
+        });
+    };
+</script>	
+</body>
+</html>
